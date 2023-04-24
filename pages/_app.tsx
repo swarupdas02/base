@@ -1,4 +1,4 @@
-import { ChakraProvider, extendBaseTheme } from '@chakra-ui/react';
+import { ChakraProvider, extendBaseTheme, extendTheme } from '@chakra-ui/react';
 import store from '@redux/store';
 import { AppProps } from 'next/app';
 import { useEffect } from 'react';
@@ -6,10 +6,8 @@ import { Provider } from 'react-redux';
 
 const customTheme = {
   colors: {
-    bgColor: 'grey',
+    bgColor: 'white',
     fontColor: 'black',
-    buttonBgColor: 'red',
-    buttonFontColor: 'white',
   },
   breakpoints: {
     sm: '640px',
@@ -19,7 +17,7 @@ const customTheme = {
   }
 };
 
-const theme = extendBaseTheme(customTheme);
+const theme = extendTheme(customTheme);
 
 function BaseApp({ Component, pageProps }: AppProps): JSX.Element {
   useEffect(() => {
