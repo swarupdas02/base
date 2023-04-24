@@ -1,5 +1,5 @@
 import { ChakraProvider, extendBaseTheme } from '@chakra-ui/react'
-import { createBreakpoints } from '@chakra-ui/theme-tools';
+import store from '@redux/store';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useEffect } from 'react';
@@ -52,15 +52,15 @@ function Wrapper({ Component, pageProps }: AppProps): JSX.Element {
   }, []);
 
   return (
-    // <Provider store={undefined}>
-    <ChakraProvider theme={theme}>
-      <BaseApp Component={Component} pageProps={pageProps} router={undefined} />
-      <link id="fonts" rel="preload" href="/styles/fonts.css" as="style" />
-      <noscript>
-        <link rel="stylesheet" href="/styles/fonts.css" />
-      </noscript>
-    </ChakraProvider>
-    // </Provider>
+    <Provider store={store}>
+      <ChakraProvider theme={theme}>
+        <BaseApp Component={Component} pageProps={pageProps} router={undefined} />
+        <link id="fonts" rel="preload" href="/styles/fonts.css" as="style" />
+        <noscript>
+          <link rel="stylesheet" href="/styles/fonts.css" />
+        </noscript>
+      </ChakraProvider>
+    </Provider>
   );
 }
 

@@ -15,6 +15,5 @@ const store = configureStore({
   reducer,
   middleware: (getDefaultMiddleware) => getDefaultMiddleware({ serializableCheck: false }).concat(sagaMiddleware),
 });
-sagaMiddleware.run(watcherSaga);
 
 export default store;

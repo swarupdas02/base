@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint \"**/*.{js,jsx,ts,tsx}\"",
+    "prettier": "prettier --write \"**/*.{js,jsx,ts,tsx,css}\""
   },
   "dependencies": {
     "@chakra-ui/react": "^2.5.5",
@@ -27,11 +28,13 @@
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
     "framer-motion": "^10.12.3",
+    "husky": "^8.0.3",
     "next": "13.3.0",
     "prettier": "^2.8.7",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-redux": "^8.0.5",
+    "react-select": "^5.7.2",
     "redux-saga": "^1.2.3",
     "redux-thunk": "^2.4.2",
     "typescript": "5.0.4"
@@ -43,5 +46,10 @@
     "*.{js,jsx,ts,tsx}": [
       "npm run lint -- --quiet --fix"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
