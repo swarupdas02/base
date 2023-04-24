@@ -1,7 +1,6 @@
-import { ChakraProvider, extendBaseTheme } from '@chakra-ui/react'
+import { ChakraProvider, extendBaseTheme } from '@chakra-ui/react';
 import store from '@redux/store';
 import { AppProps } from 'next/app';
-import Head from 'next/head';
 import { useEffect } from 'react';
 import { Provider } from 'react-redux';
 
@@ -28,20 +27,7 @@ function BaseApp({ Component, pageProps }: AppProps): JSX.Element {
     if (id && id.rel && id.rel != 'stylesheet') id.rel = 'stylesheet';
   }, []);
 
-  return (
-    <>
-      <Head>
-        <title>Website</title>
-        <meta
-          name="description"
-          content={
-            "Base Template Webpage"
-          }
-        />
-      </Head>
-      <Component {...pageProps} />
-    </>
-  );
+  return <Component {...pageProps} />;
 
 }
 
@@ -54,7 +40,7 @@ function Wrapper({ Component, pageProps }: AppProps): JSX.Element {
   return (
     <Provider store={store}>
       <ChakraProvider theme={theme}>
-        <BaseApp Component={Component} pageProps={pageProps} router={undefined} />
+        <BaseApp Component={Component} {...pageProps} />
         <link id="fonts" rel="preload" href="/styles/fonts.css" as="style" />
         <noscript>
           <link rel="stylesheet" href="/styles/fonts.css" />
