@@ -1,6 +1,5 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import createSagaMiddleware from 'redux-saga';
-import { watcherSaga } from './sagas/rootSaga';
 import appStateReducer from './slices/appState';
 
 const sagaMiddleware = createSagaMiddleware();
