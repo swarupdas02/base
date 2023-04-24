@@ -1,12 +1,13 @@
-import { Flex, Text } from "@chakra-ui/react"
+import { Container, Flex, Text } from "@chakra-ui/react"
+import { Wrapper } from "@components/Wrapper"
 
 const Home: React.FC = () => {
 
   return (
     <>
-      <Text>
+      <Wrapper>
         Hello
-      </Text>
+      </Wrapper>
     </>
   )
 }
