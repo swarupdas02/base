@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 
 const customTheme = {
   colors: {
-    bgColor: 'white',
+    bgColor: '#AFD3E2',
     fontColor: 'black',
   },
   breakpoints: {
