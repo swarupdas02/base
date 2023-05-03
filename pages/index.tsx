@@ -1,9 +1,11 @@
 import { Flex } from "@chakra-ui/react"
-import { Navbar } from "@components/Navbar"
-import { Wrapper } from "@components/Wrapper"
+import { Navbar } from "@components/layout/Navbar"
+import { Wrapper } from "@components/layout/Wrapper"
+import { RootState } from "@redux/store";
+import { useSelector } from "react-redux";
 
 const Home: React.FC = () => {
-
+  const isDarkMode = useSelector((state: RootState) => state.appState.darkMode);
   return (
     <>
       <Navbar />

@@ -5,6 +5,7 @@ export const darkTheme: theme = {
   color: "#F1F6F9",
   navbarColor: "#212A3E",
   textColor: "#F1F6F9",
+  navbarTextColor: "#F1F6F9",
   buttonColor: "#088395",
   buttonTextColor: "#0A4D68",
   cardColor: "#917FB3",

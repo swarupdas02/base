@@ -5,7 +5,7 @@ export interface globalVariables {
   description: string;
 }
 export const globals: globalVariables = {
-  desktopHeight: '50px',
+  desktopHeight: '60px',
   mobileHeight: '30px',
   username: 'Surupa Das',
   description: '',
